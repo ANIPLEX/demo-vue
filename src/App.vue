@@ -31,8 +31,7 @@
             }
                 axios
                     .get('http://122.152.196.141:3000/search?keywords='+this.idata)
-                    .then(response=>(this.inputData = response.data.result.songs,
-                        this.musicUrl = ''+response.data.result.songs.id))
+                    .then(response=>(this.inputData = response.data.result.songs))
                 //
                     .catch(error=>console.log(error))
             }

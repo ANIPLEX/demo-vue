@@ -44,7 +44,7 @@
                 currentRow: null
             }
         }, props: {
-            inputData: ''
+            inputData:''
         },
         setCurrent(row) {
             this.$refs.singleTable.setCurrentRow(row);
