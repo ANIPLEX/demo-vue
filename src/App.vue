@@ -2,12 +2,11 @@
     <div id="app">
 
         <el-input v-model="idata" id="idata" name="idata" placeholder="输入搜索信息" style="width: 70%;" @keydown.native.enter="btn"></el-input>
-        &nbsp;&nbsp;
-        <el-button type="primary" @click="btn">搜索
-        </el-button>
+        &nbsp;&nbsp;<el-button type="primary" icon="el-icon-search" @click="btn">搜索</el-button>
+
 
         <br> <br>
-        <searchList :inputData="inputData"/>
+        <searchList :inputData="inputData" />
     </div>
 </template>
 
@@ -26,12 +25,14 @@
             }
         }, methods: {
             btn(idata) {
+
                 if(this.idata==''){
                 alert('搜索值不能为空')
             }
                 axios
                     .get('http://122.152.196.141:3000/search?keywords='+this.idata)
-                    .then(response=>(this.inputData = response.data.result.songs))
+                    .then(response=>(this.inputData = response.data.result.songs,
+                        this.musicUrl = ''+response.data.result.songs.id))
                 //
                     .catch(error=>console.log(error))
             }

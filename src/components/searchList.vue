@@ -13,12 +13,12 @@
             <el-table-column
                     property="name"
                     label="歌曲"
-                    width="130">
+                    width="140">
             </el-table-column>
             <el-table-column
                     property="artists[0].name"
                     label="歌手"
-                    width="120">
+                    width="80">
             </el-table-column>
             <el-table-column
                     property="album.name"
@@ -27,15 +27,15 @@
             >
             </el-table-column>
             <el-table-column
-                    label="播放地址"
-
-            ><a href="">播放</a>
-            </el-table-column>
+                    label="播放"
+            >
+                <el-button type="info" icon="el-icon-caret-right" circle></el-button>
+            </el-table-column
+            >
         </el-table>
 
     </div>
 </template>
-
 <script>
     export default {
         name: "searchList",
@@ -44,7 +44,7 @@
                 currentRow: null
             }
         }, props: {
-            inputData:''
+            inputData: ''
         },
         setCurrent(row) {
             this.$refs.singleTable.setCurrentRow(row);
