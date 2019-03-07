@@ -1,7 +1,7 @@
 <template>
     <div id="app">
 
-        <el-input v-model="idata" id="idata" name="idata" placeholder="请输入内容" style="width: 70%;" @keydown.native.enter="btn"></el-input>
+        <el-input v-model="idata" id="idata" name="idata" placeholder="输入搜索信息" style="width: 70%;" @keydown.native.enter="btn"></el-input>
         &nbsp;&nbsp;
         <el-button type="primary" @click="btn">搜索
         </el-button>
